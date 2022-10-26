@@ -1,2 +1,32 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container-fluid
+    %a.navbar-brand{:href => "#"} My rails app
+    %button.navbar-toggler{"aria-controls" => "navbarScroll", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarScroll", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarScroll.collapse.navbar-collapse
+      %ul.navbar-nav.me-auto.my-2.my-lg-0.navbar-nav-scroll{:style => "--bs-scroll-height: 100px;"}
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+        %li.nav-item
+          %a.nav-link{:href => "#"} Link
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Link
+          %ul.dropdown-menu
+            %li
+              %a.dropdown-item{:href => "#"} Action
+            %li
+              %a.dropdown-item{:href => "#"} Another action
+            %li
+              %hr.dropdown-divider/
+            %li
+              %a.dropdown-item{:href => "#"} Something else here
+        %li.nav-item
+          %a.nav-link.disabled Link
+      %form.d-flex{:role => "search"}
+        %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        %button.btn.btn-outline-success{:type => "submit"} Search
+
 %h1 Home#index
 %p Find me in app/views/home/index.html.haml
+
