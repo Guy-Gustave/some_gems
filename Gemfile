@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+gem "haml-rails", "~> 2.0"
+gem 'html2haml'
+
+gem 'bootstrap', '~> 5.2.2'
