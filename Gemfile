@@ -79,3 +79,5 @@ gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
 
 gem "font-awesome-sass", "~> 6.2.0"
+
+gem 'simple_form'
