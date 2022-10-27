@@ -81,3 +81,7 @@ gem 'jquery-rails'
 gem "font-awesome-sass", "~> 6.2.0"
 
 gem 'simple_form'
+gem 'hirb'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+
+gem 'devise'
