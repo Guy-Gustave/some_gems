@@ -5,6 +5,11 @@ import "bootstrap";
 //= require jquery3
 //= require popper
 //= require bootstrap-sprocketsimport "trix"
+
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
+
 import "trix"
 import "@rails/actiontext"
 
