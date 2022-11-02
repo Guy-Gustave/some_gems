@@ -85,3 +85,5 @@ gem 'hirb'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 gem 'devise'
+
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
