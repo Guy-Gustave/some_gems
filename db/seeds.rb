@@ -11,6 +11,10 @@ require 'faker'
   Course.create!([{
     title: Faker::Educator.course_name,
     description: Faker::TvShows::GameOfThrones.quote,
-    user: User.first
+    short_description: Faker::TvShows::GameOfThrones.quote,
+    user: User.first,
+    language: Faker::ProgrammingLanguage.name,
+    level: 'Beginner',
+    price: Faker::Number.between(from: 100, to: 5000),
   }])
 end
