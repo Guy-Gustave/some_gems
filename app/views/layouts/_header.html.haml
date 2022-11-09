@@ -22,14 +22,11 @@
           = link_to new_course_path, class: 'nav-link' do
             .fa.fa-plus
             New Course
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(home_activity_path)}"}
+          = link_to home_activity_path, class: 'nav-link' do
+            .fa.fa-bell
+            Activities 
 
-      -# .form-inline.my-2.my-lg-0
-      -#   = form_tag(courses_path, method: :get) do
-      -#     .input-group
-      -#       = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
-      -#       %span.input-group-append
-      -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
-      -#           %span.fa.fa-search{"aria-hidden" => "true"}
       
             /SEARCH IN NAVBAR
       = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
