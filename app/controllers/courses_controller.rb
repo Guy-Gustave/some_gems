@@ -9,6 +9,13 @@ class CoursesController < ApplicationController
       # @courses = Course.all
       # @q = Course.ransack(params[:q])
       # @courses = @q.result.includes(users)
+
+      #if current_user.has_role?(:admin)
+    #  @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
+    #  @courses = @ransack_courses.result.includes(:user)
+    #else
+    #  redirect_to root_path, alert: 'You do not have access'
+    #end
       @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
       @courses = @ransack_courses.result.includes(:user)
     end
