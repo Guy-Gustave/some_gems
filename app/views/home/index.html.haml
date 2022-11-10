@@ -49,15 +49,15 @@
     Lifetime access
     .row
     Learn on your schedule
--# %hr
--# %h2
--#   Popular courses
--# .card-columns
--#   - @courses.each do |course|
--#     = render 'courses/course', course: course
--# %hr
--# %h2 
--#   Top rated courses
--# .card-columns
--#   - @courses.each do |course|
--#     = render 'courses/course', course: course
+%hr
+%h2
+  Popular courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+%hr
+%h2 
+  Top rated courses
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course

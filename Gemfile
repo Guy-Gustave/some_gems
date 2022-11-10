@@ -91,3 +91,4 @@ gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'ransack'
 gem 'public_activity'
 gem "rolify"
+gem "pundit"
