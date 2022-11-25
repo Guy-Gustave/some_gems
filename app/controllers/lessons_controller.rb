@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: %i[ show edit update destroy ]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons or /lessons.json
   def index
@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1 or /lessons/1.json
   def show
-    # @lessons = @course.lessons
+
   end
 
   # GET /lessons/new
