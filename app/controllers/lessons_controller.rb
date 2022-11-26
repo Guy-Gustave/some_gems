@@ -15,7 +15,6 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
     @course = Course.friendly.find(params[:course_id])
-    authorize @lesson
   end
 
   # GET /lessons/1/edit
@@ -60,7 +59,7 @@ class LessonsController < ApplicationController
     @lesson.destroy
 
     respond_to do |format|
-      format.html { redirect_to lessons_url, notice: "Lesson was successfully destroyed." }
+      format.html { redirect_to course_lesson_path(@course), notice: "Lesson was successfully destroyed." }
       format.json { head :no_content }
     end
   end
