@@ -15,6 +15,7 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
     @course = Course.friendly.find(params[:course_id])
+    authorize @lesson
   end
 
   # GET /lessons/1/edit
@@ -27,6 +28,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @course = Course.friendly.find(params[:course_id])
     @lesson.course_id = @course.id
+    authorize @lesson
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to course_lesson_path(@course, @lesson), notice: "Lesson was successfully created." }
