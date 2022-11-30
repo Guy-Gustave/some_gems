@@ -7,7 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-3.times do
+PublicActivity.enabled = false
+20.times do
   Course.create!([{
     title: Faker::Educator.course_name,
     description: Faker::TvShows::GameOfThrones.quote,
