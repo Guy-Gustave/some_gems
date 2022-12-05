@@ -24,10 +24,10 @@
           = link_to new_course_path, class: 'nav-link' do
             .fa.fa-plus
             New Course
-        -# %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_lesson_path)}"}
-        -#   = link_to new_lesson_path, class: 'nav-link' do
-        -#     .fa.fa-plus
-        -#     New Lesson
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollements_path)}"}
+          = link_to enrollements_path, class: 'nav-link' do
+            .fa.fa-lock-open
+            New subscription
        
 
             /SEARCH IN NAVBAR
