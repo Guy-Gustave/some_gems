@@ -22,6 +22,9 @@ class EnrollementsController < ApplicationController
   # POST /enrollements or /enrollements.json
   def create
     @enrollement = Enrollement.new(enrollement_params)
+    if @enrollement.course.present?
+      @enrollement.price = @enrollement.course.price
+    end
 
     respond_to do |format|
       if @enrollement.save
@@ -65,6 +68,6 @@ class EnrollementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def enrollement_params
-      params.require(:enrollement).permit(:user_id, :course_id, :rating, :review, :price)
+      params.require(:enrollement).permit(:user_id, :course_id, :rating, :review)
     end
 end

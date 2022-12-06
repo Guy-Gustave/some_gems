@@ -9,16 +9,20 @@ class Enrollement < ApplicationRecord
 
   validate :cant_subscribe_to_own_course
 
+  def to_s
+    user.to_s + course.to_s
+  end
+
   protected
 
   def cant_subscribe_to_own_course
     if self.new_record?
       if user_id.present?
-        If user_id == course.user_id
+        if self.user_id == course.user_id
           errors.add(:base, "You cannot subscribe to your own course")
         end
       end
-  
+    end
   end
 
 end

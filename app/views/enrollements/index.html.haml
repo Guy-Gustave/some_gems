@@ -1,29 +1,36 @@
-%h1 Listing enrollements
+- content_for :title do
+  Some_gems 
+  \| 
+  All Enrollments
+%h3
+  .text-center
+    Enrollments
+    = @enrollements.count
+%p
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Course
-      %th Rating
-      %th Review
-      %th Price
-      %th
-      %th
-      %th
-
-  %tbody
-    - @enrollements.each do |enrollement|
+.table-responsive
+  %table.table.table-bordered.table-striped.table-sm
+    %thead
       %tr
-        %td= enrollement.user
-        %td= enrollement.course
-        %td= enrollement.rating
-        %td= enrollement.review
-        %td= enrollement.price
-        %td= link_to 'Show', enrollement
-        %td= link_to 'Edit', edit_enrollement_path(enrollement)
-        %td= link_to 'Destroy', enrollement, method: :delete, data: { confirm: 'Are you sure?' }
+        %th User
+        %th Course
+        %th Rating
+        %th Review
+        %th Price
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @enrollements.each do |enrollement|
+        %tr
+          %td= enrollement.user
+          %td= enrollement.course
+          %td= enrollement.rating
+          %td= enrollement.review
+          %td= number_to_currency(enrollement.price)
+          %td= link_to 'Show', enrollement
+          %td= link_to 'Edit', edit_enrollement_path(enrollement)
+          %td= link_to 'Destroy', enrollement, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
 
 = link_to 'New Enrollement', new_enrollement_path
