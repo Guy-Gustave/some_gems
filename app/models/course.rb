@@ -10,6 +10,10 @@ class Course < ApplicationRecord
     title
   end
 
+  def bought(user)
+    self.enrollements.where(user_id: [user.id], course_id: [self.id].empty?)
+  end
+
   has_rich_text :description
 
   extend FriendlyId
