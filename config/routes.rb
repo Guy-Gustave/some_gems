@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :courses do
-    resources :enrollements, only: [:new, :create]
     resources :lessons
+    resources :enrollements, only: [:new, :create]
   end
   resources :users , only: [:index, :edit, :show, :update]
   get 'home/activity'

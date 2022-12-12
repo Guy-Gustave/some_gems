@@ -1,21 +1,23 @@
-%p#notice= notice
+-# %p#notice= notice
 
-%p
-  %b User:
-  = @enrollement.user
-%p
-  %b Course:
-  = @enrollement.course
-%p
-  %b Rating:
-  = @enrollement.rating
-%p
-  %b Review:
-  = @enrollement.review
-%p
-  %b Price:
-  = @enrollement.price
+-# %p
+-#   %b User:
+-#   = @enrollement.user
+-# %p
+-#   %b Course:
+-#   = @enrollement.course
+-# %p
+-#   %b Rating:
+-#   = @enrollement.rating
+-# %p
+-#   %b Review:
+-#   = @enrollement.review
+-# %p
+-#   %b Price:
+-#   = @enrollement.price
 
-= link_to 'Edit', edit_enrollement_path(@enrollement)
-\|
-= link_to 'Back', enrollements_path
+-# = link_to 'Edit', edit_enrollement_path(@enrollement)
+-# \|
+-# = link_to 'Back', enrollements_path
+
+= render 'enrollements/enrollement', enrollement: @enrollement

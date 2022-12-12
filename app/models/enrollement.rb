@@ -13,6 +13,8 @@ class Enrollement < ApplicationRecord
     user.to_s + course.to_s
   end
 
+  scope :pending_review, -> { where(rating: [0, nil, ""], review: [0, nil, ""]) }
+
   protected
 
   def cant_subscribe_to_own_course
